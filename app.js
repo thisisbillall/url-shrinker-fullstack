@@ -5,7 +5,9 @@ const mongoose = require("mongoose");
 const shortUrl = require("./models/shortUrls");
 const alert = require("alert");
 
-mongoose.connect("mongodb+srv://thisisbillall:bilalurl@cluster0.bro7kt1.mongodb.net/?retryWrites=true&w=majority",{
+require('dotenv').config();
+
+mongoose.connect(process.env.MONGO_URL,{
     useNewUrlParser:true, useUnifiedTopology:true
 })
 
@@ -51,6 +53,6 @@ app.post("/delete/:id", async (req,res)=>{
 
 })
 
-app.listen(5000, ()=>{
+app.listen(process.env.PORT, ()=>{
     console.log("App Running on PORT 5000 :)");
 })
