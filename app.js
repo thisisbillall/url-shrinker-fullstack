@@ -7,7 +7,9 @@ const alert = require("alert");
 
 require('dotenv').config();
 
-mongoose.connect(process.env.MONGO_URL,{
+// mongoose.connect(process.env.MONGO_URL,{
+mongoose.connect("mongodb+srv://thisisbillall:bilalurl@cluster0.bro7kt1.mongodb.net/?retryWrites=true&w=majority"
+,{
     useNewUrlParser:true, useUnifiedTopology:true
 })
 
@@ -53,6 +55,6 @@ app.post("/delete/:id", async (req,res)=>{
 
 })
 
-app.listen(process.env.PORT, ()=>{
-    console.log("App Running on PORT 5000 :)");
+app.listen(3000, ()=>{
+    console.log("App Running on PORT 3000 :)");
 })
